@@ -1,7 +1,6 @@
 import Header from "../../components/Header"
 import moment from 'moment'
 import {URL} from '../../utils/url'
-import ConfirmDeleteModal from "../../components/ConfirmDeleteModal"
 import '../Complete_post/CompletePost.css'
 import Footer from "../../components/Footer"
 
@@ -43,7 +42,7 @@ export default function CompletePostUI({postData, titleValue, contentValue, plac
             </div>
             
             <Footer/>
-            {/* {showModal&&<ConfirmDeleteModal handleCloseModal={handleCloseModal} handleDeletePost={handleDeletePost}/>} */}
+            
         </div>
         
     )

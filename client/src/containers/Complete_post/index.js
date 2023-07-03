@@ -84,7 +84,6 @@ export default function CompletePost() {
   }
   const handleSaveChanges = async (event) => {
     event.preventDefault();
-    console.log("entra en la función");
     try {
       const formData = new FormData();
       formData.append("title", titleValue);
@@ -113,15 +112,15 @@ export default function CompletePost() {
   };
 
   async function handleDeletePost() {
-    // Mostrar el mensaje de confirmación antes de eliminar el post
+    
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro de que quieres eliminar el post?",
+      text: "Esta operación no podrá deshacerse",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Eliminar",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -137,17 +136,17 @@ export default function CompletePost() {
           });
 
           if (response.status === 200) {
-            // Post eliminado exitosamente
+            
             navigate("/");
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire("Eliminado!", "El post se ha eliminado exitosamente", "success");
           } else {
             // Ocurrió un error al eliminar el post
-            Swal.fire("Error!", "Failed to delete the post.", "error");
+            Swal.fire("Error!", "Se ha producido un fallo al eliminar el post.", "error");
           }
         } catch (error) {
           console.log(error);
           // Ocurrió un error al hacer la solicitud
-          Swal.fire("Error!", "Failed to delete the post.", "error");
+          Swal.fire("Error!", "Se ha producido un fallo al eliminar el post.", "error");
         }
       }
     });

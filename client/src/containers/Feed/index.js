@@ -33,13 +33,13 @@ export default function Feed() {
     async function handleDeletePost(postId, postImgUrl) {
         // Mostrar el mensaje de confirmación antes de eliminar el post
         Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
+          title: "¿Estás seguro de que quieres eliminar el post?",
+          text: "Esta operación no podrá deshacerse",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
+          confirmButtonText: "Eliminar",
         }).then(async (result) => {
           if (result.isConfirmed) {
             try {
@@ -57,16 +57,16 @@ export default function Feed() {
               if (response.status === 200) {
                 // Post eliminado exitosamente
                 
-                await Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                await Swal.fire("Eliminado!", "El post se ha eliminado exitosamente", "success");
                 setDeleted(true)
               } else {
                 // Ocurrió un error al eliminar el post
-                Swal.fire("Error!", "Failed to delete the post.", "error");
+                Swal.fire("Error!", "Se ha producido un fallo al eliminar el post.", "error");
               }
             } catch (error) {
               console.log(error);
               // Ocurrió un error al hacer la solicitud
-              Swal.fire("Error!", "Failed to delete the post.", "error");
+              Swal.fire("Error!", "Se ha producido un fallo al eliminar el post.", "error");
             }
           }
         });
