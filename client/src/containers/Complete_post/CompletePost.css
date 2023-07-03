@@ -1,0 +1,19 @@
+#complete_post_main_container {
+    background-color: rgb(224, 218, 196);
+    height: 100%;    
+    border-radius: 0 0 15px 15px ;
+}
+#complete_post_image {
+    height: 31em;
+    width: auto;
+}
+
+#complete_post_content {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#complete_post_text {
+    text-align: justify;
+}

@@ -1,0 +1,17 @@
+#header_main_container{
+    background-color: white;
+    /* height: 100px; */
+    width: 80%;
+    margin: 15px auto 0 auto;
+    border-radius: 15px 15px 0 0;
+}
+
+#blog_name {
+    color: rgb(169, 111, 4);
+    width: fit-content;
+}
+
+#logo {
+    height: 80px;
+    width: auto;
+}

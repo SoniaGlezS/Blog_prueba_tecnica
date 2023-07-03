@@ -1,0 +1,12 @@
+#postCard_image {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+#post_card_container {
+    width: 90%;
+}
+.post_content {
+    flex-grow: 1;
+}

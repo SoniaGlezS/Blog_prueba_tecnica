@@ -1,6 +1,7 @@
 const express = require('express')
 const server = express();
-const routes = require('./routes/index.js')
+const router = require('./routes/index')
+const routes = router
 const bodyParser = require('body-parser')
 
 server.use(bodyParser.urlencoded({extended: true, limit: '50mb'}))
@@ -16,7 +17,10 @@ server.use((req, res, next) => {
     next();
 });
 
+
 server.use('/', routes);
+server.use(express.static('/'));
+server.use('/images', express.static('public/images'))
 
 const app = server.listen(3001, console.log('server online'))
 
